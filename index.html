@@ -89,16 +89,57 @@
         <p>介绍几个自适应的CSS单位,包括<span style="color:green">em rem maxwidth minwidth maxheight minheight</span></p>
 <p>###1.em rem<br><code>em</code>和<code>rem</code>是css2增加的单位,</p>
 <p><code>em</code>是相对于父类字体大小的单位.即1em等于父类字体大小,2em为父类字体大小的两倍,炒个栗子,</p>
-<pre><code>&lt;body&gt; &lt;div class=&quot;test&quot;&gt;Test&lt;/div&gt;&lt;/body&gt; body { font-size: 14px;}div { font-size: 1.2em; // calculated at 14px * 1.2, or 16.8px}
+<pre><code>&lt;body&gt;
+ &lt;div class=&quot;test&quot;&gt;Test&lt;/div&gt;
+&lt;/body&gt;
+  body { font-size: 14px;}
+  div { font-size: 1.2em; // calculated at 14px * 1.2, or 16.8px}
 </code></pre><p>这里div的字体大小是1.2em。继承的字体大小（这里是14px）的1.2倍，结果就是16.8px。</p>
 <p><code>rem</code> r是root的意思,不难理解rem是相对于根的字体大小的单位,一般情况下根就是html了,现在大部分浏览器都是16px.</p>
 <p>不难想象rem可以实现你的内容可以根据你的界面大小实现自适应,作用很大,但是不是在所有情况下都能试用,这个以后再讲.</p>
-<p>###2.vh vm<br>提到响应式web设计最先想到的是百分比,但css百分比并不是所有问题的最佳解决方案.</p>
+<p>###2.max-width max-height min-width min-height<br>这几个都是css2的属性,后面可以加像素也可以加百分比,可以设置元素的最大宽度和最大高度,这个很容易理解,但具体该怎么用呢?</p>
+<p>举个栗子,我们想实现图片在浏览器上的自适应,让图片随视窗大小改变而改变,但是我们又不想图片太大导致失真或者太小看不清,这时我们就可以添个max-width或者min-width.</p>
+<pre><code>&lt;style&gt;
+    body{
+        background: yellow;
+}
+.div1{
+        width: 90%;
+        max-width: 700px;
+        min-width: 400px;
+}
+.div1 li{
+    width: 30%;
+     max-width: 100%;
+    min-width: 200px;
+    overflow: hidden;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+.div1 li img{
+    width: 100%;
+}
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class=&quot;div1&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src=&quot;100.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;100.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;100.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;100.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;100.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;100.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p><img src="images/yiqunniao.png" style="width:500px "></p>
+<p>如图,把<code>3</code>拉成<code>2</code> 图像自适应变大,当图片达到max-width设置的最高值时,将<code>2</code>拉成<code>3</code>图片就不在随窗口变宽而继续变宽.min-width同理.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/23/css3的单位/" data-id="cips06e1c0002r6a01wg07yus" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/23/css3的单位/" data-id="cips380ti0000tca04gurslsl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +179,7 @@
 </ol>
 <p>如果出现权限不够的问题就加个sudo,即sudo npm install hexo -g</p>
 <p>2.安装完成后输入hexo 测试,安装成功后会提示些hexo命令什么的,如图.</p>
-<p><img src="../../public/images/hexo截图.png" width="100px"></p>
+<p><img src="images/hexo截图.png" width="100px"></p>
 <p>3 创建目录并初始化.</p>
 <p>创建用于存储博客的文件夹,然后进入使用终端进入文件夹输入 <em>hexo init</em> 来初始化.</p>
 <p>4 启动本地服务<br>继续输入<em>hexo server</em>,成功后从浏览器输入<em><a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></em>,便可本地浏览博客了.</p>
@@ -155,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/如何使用hexo&github创建博客/" data-id="ciprzk6z70001r6a0n9op4gho" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/如何使用hexo&github创建博客/" data-id="cips380ts0002tca0zzf1xw1h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciprzk6yq0000r6a0gx69ro86" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="cips380to0001tca0f87kphzf" class="article-share-link">Share</a>
       
       
     </footer>
