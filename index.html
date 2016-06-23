@@ -64,6 +64,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-css3的单位" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/23/css3的单位/" class="article-date">
+  <time datetime="2016-06-23T07:44:22.000Z" itemprop="datePublished">2016-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/23/css3的单位/">CSS的单位</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>介绍几个自适应的CSS单位,包括<span style="color:green">em rem maxwidth minwidth maxheight minheight</span></p>
+<p>###1.em rem<br><code>em</code>和<code>rem</code>是css2增加的单位,</p>
+<p><code>em</code>是相对于父类字体大小的单位.即1em等于父类字体大小,2em为父类字体大小的两倍,炒个栗子,</p>
+<pre><code>&lt;body&gt; &lt;div class=&quot;test&quot;&gt;Test&lt;/div&gt;&lt;/body&gt; body { font-size: 14px;}div { font-size: 1.2em; // calculated at 14px * 1.2, or 16.8px}
+</code></pre><p>这里div的字体大小是1.2em。继承的字体大小（这里是14px）的1.2倍，结果就是16.8px。</p>
+<p><code>rem</code> r是root的意思,不难理解rem是相对于根的字体大小的单位,一般情况下根就是html了,现在大部分浏览器都是16px.</p>
+<p>不难想象rem可以实现你的内容可以根据你的界面大小实现自适应,作用很大,但是不是在所有情况下都能试用,这个以后再讲.</p>
+<p>###2.vh vm<br>提到响应式web设计最先想到的是百分比,但css百分比并不是所有问题的最佳解决方案.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/23/css3的单位/" data-id="cips06e1c0002r6a01wg07yus" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-如何使用hexo&amp;github创建博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/22/如何使用hexo&github创建博客/" class="article-date">
@@ -103,7 +147,7 @@
 <li>配置ssh-key,blog目录下输入ssh-keygen,连续回车三次,复制出现的ssh-key,然后输入:q回车,将复制的ssh-key粘贴到github,然后输入git config –global user.name”<span style="text-decoration:underline">github的账号</span>“回车,再输入git config –global user.name”<span style="text-decoration:underline">注册github的邮箱</span>“回车.</li>
 <li>最后我们要建立博客域名仓库,注意!创建域名仓库的地址 一定要是<strong>“用户名.github.io”</strong>的格式.</li>
 </ol>
-<h2 id="第四步-发布"><a href="#第四步-发布" class="headerlink" title="第四步 发布"></a>第四步 发布</h2><p>1.找到存放博客文件的文件夹下的config.yml文件,翻到最后找到将type:后输入git,再加个repo:”域名仓库的https的地址” 上图:<br> <img src="../../public/images/deloy.png" style="width:60% "></p>
+<h2 id="第四步-发布"><a href="#第四步-发布" class="headerlink" title="第四步 发布"></a>第四步 发布</h2><p>1.找到存放博客文件的文件夹下的config.yml文件,翻到最后找到将type:后输入git,再加个repo:”域名仓库的https的地址” 上图:<br> <img src="images/deloy.png" style="width:60% "></p>
 <p>2.终端进入博客文件夹 输入npm install hexo-deployer-git –save回车</p>
 <p>  hexo g回车 生成静态网页</p>
 <p>  hexo d回车 将.deploy目录部署到GitHub</p>
@@ -111,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/如何使用hexo&github创建博客/" data-id="cipqzrans0000fsa0n04x60yf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/如何使用hexo&github创建博客/" data-id="ciprzk6z70001r6a0n9op4gho" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="cipqw68eq0000b0a0drhvhbot" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/22/hello-world/" data-id="ciprzk6yq0000r6a0gx69ro86" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,6 +238,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/23/css3的单位/">CSS的单位</a>
+          </li>
         
           <li>
             <a href="/2016/06/22/如何使用hexo&github创建博客/">如何使用Hexo&amp;Github创建博客</a>
